@@ -1,519 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- bootstrap from dist from module from npm -->
-    <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css"> -->
-    <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
-    <!-- with CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!--  font-awesome from module from npm to be included-->
-    <!-- <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css"> -->
-    <!-- dcn -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-    <!-- my stylesheet -->
-    <link rel="stylesheet" href="./style.css">
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+        <!-- bootstrap from node_modules/ -->
+        <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
 
-    <title>Manakhly</title>
-</head>
+        <!-- with CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css"
+        integrity="sha512-XWTTruHZEYJsxV3W/lSXG1n3Q39YIWOstqvmFsdNEEQfHoZ6vm6E9GK2OrF6DSJSpIbRbi+Nn0WDPID9O7xB2Q==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
 
-<body>
+        <!--  font-awesome from  from node_modules/ -->
+        <!-- <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css"> -->
 
-    <!-- get nav component from bootstrab -->
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <!-- remove bg-light to apply our color from css var , navbar class is the master one
+        <!-- CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        for navbar-expand-lg //to be normal till lg m you can make it till md -->
+        <!-- my stylesheet -->
+        <link rel="stylesheet" href="./style.css">
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+        <title>Manakhly</title>
+    </head>
 
-        <!-- we added to the body 10000px hight to test the scro and added sticky-top class from BS -->
-        <div class="container">
-            <!-- change container-fluid to be boxed by using only "container" class //now as you see with boxed there is a marging l&r
-            WE USE CONTAINER WITH EACH SECTION -->
-            <!-- nav bootstrap coms with form of sreach ,so we remove it unless we need it  -->
-            <!-- coms with disable link, remove it with last li -->
-            <!-- the li before it has a inside it + ul inside it some li to creat a dropdown list so remove it -->
-            <!-- strarting from 2ns li we creat more items as needed  -->
-            <a class="navbar-brand" href="#">
-                .<img src="./assets/text-1660258868224.png" alt="your browser doesn't support this"  width="150rem" height="45rem">
-            </a>
-            <!-- THIS A FOR THE LOGO AND IT TAKS THIS CLASS navbar-brand , TO RESET THE A style"
-            over ride it with some bootstrap class or add My logo imag-->
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main" aria-controls="main" aria-expanded="false" aria-label="Toggle navigation">
-                <!-- <span class="navbar-toggler-icon"></span> -->
-                <!-- instead of the span inside the button that coms from the BS
-                we have used the FA icone bar -->
-                <i class="fa-solid fa-bars"></i>
-                <!-- override on the btn color ,size & border -->
-
-                <!-- for data-bs-toggle="collapse" to make it for collapse function operation
-                data-bs-target="#main"  to target the upcoming navbar-collapse" by it's  id="main" to apply collapse on it
-                aria-controls="main" aria-expanded="false" aria-label="Toggle navigation" -->
-            </button>
-
-            <div class="collapse navbar-collapse mb-3 mb-lg-0"  id="main" >
-                <!-- our li inside ul inside div called navbar-collapse
-                changeing the id of it from "navbarSupportedContent" to main and to be also changed with the button toggler "data-bs-target" & "aria-controls"-->
-                <!-- for class="collapse navbar-collapse" id="main" ,, to be the target  -->
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <!-- with the ul change me-auto to be ms-auto to get the while links on the right and keep the left to the logo
-                    me for m end //ms for m start // lg media quairy for large -->
-                    <li class="nav-item">
-                        <a class=" nav-link p-2 p-lg-3 active" aria-current="page" href="#">Home</a>
-                        <!-- for aria-current="page"  ................................................... -->
-                        <!-- adding text-white from BS to links to change their colors but we will override from css better to be able to
-                        override on the hover link from the css by
-                        .navbar .navbar-nav .nav-link //our 2ns var-->
-
-                        <!-- adding more padding for lg with "p-lg-3 "
-                        p2 the defualt ,so it means all screens below large will be 0.5 padding and for large 1rem padding-->
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link p-2 p-lg-3 " href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link p-2 p-lg-3 " href="#">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link p-2 p-lg-3" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link p-2 p-lg-3" href="#">Contact</a>
-                    </li>
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li> -->
-                    <!-- <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li> -->
+    <body>
+        <!--  nav -->
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    .<img src="./assets/text-1660258868224.png" alt="your browser doesn't support this"  width="150rem" height="45rem">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main" aria-controls="main" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse mb-3 mb-lg-0"  id="main" >
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class=" nav-link p-2 p-lg-3 active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-2 p-lg-3 " href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-2 p-lg-3 " href="#">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-2 p-lg-3" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-2 p-lg-3" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="search ps-3 pe-3 d-none d-lg-block">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <!-- i will be rendering as svg  -->
+                    </div>
+                    <a class=" rounded-pill main-btn " href="#">Login</a>
+                </div>
+            </div>
+        </nav>
+        <!-- end of  nav component -->
+        <!-- landing -->
+        <div class="landing d-flex justify-content-center align-items-center">
+            <div class="text-center text-light">
+                <h1>The Taste Of Creativity Is Just Right Here</h1>
+                <p class="fs-6 text-white-50 mb-5">mixing of awesome design and high performance</p>
+                <a class=" rounded-pill main-btn" href="#">Get Started</a>
+            </div>
+        </div>
+        <!-- end of landing -->
+        <!-- Features Section -->
+        <div class="features text-center pt-5 pb-5">
+            <div class="container">
+                <div class="main-title mt-5 mb-5 position-relative">
+                    <!-- position-relative to use after and make line under the p also it's going to be a component -->
+                    <img class="mb-3" src="./assets/Designer Life.svg" alt="your browser doesn't support this">
+                    <!-- fixing the image size with css -->
+                    <h2>Our Services</h2>
+                    <p class="fs-6 text-black-50 mb-5 text-uppercase">it would be a pleasure to provide you with the perfect solutions</p>
+                    <!-- instead of making the p light like the last one make it black 50 -->
+                </div>
+                <div class="row">
+                    <!-- make it a component and repeat with modifying the svg only and title -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feat">
+                            <div class="icon-holder position-relative">
+                                <i class="fa-solid fa-1 position-absolute bottom-0 number"></i>
+                                <i class="fa-solid fa-pencil fa-4x position-absolute bottom-0 icon"></i>
+                            </div>
+                            <h4 class="mb-3 mt-3 text-uppercase">Graphic Design</h4>
+                            <p class="text-black-50 lh-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quod alias possimus fugiat distinctio reprehenderit consequuntur!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feat">
+                            <div class="icon-holder position-relative">
+                                <i class="fa-solid fa-2 position-absolute bottom-0 number"></i>
+                                <i class="fa-solid fa-tv fa-4x position-absolute bottom-0 icon"></i>
+                            </div>
+                            <h4 class="mb-3 mt-3 text-uppercase">Creating Systems</h4>
+                            <p class="text-black-50 lh-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quod alias possimus fugiat distinctio reprehenderit consequuntur!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="feat">
+                            <div class="icon-holder position-relative">
+                                <i class="fa-solid fa-3 position-absolute bottom-0 number"></i>
+                                <i class="fa-solid fa-plug fa-4x position-absolute bottom-0 icon"></i>
+                            </div>
+                            <h4 class="mb-3 mt-3 text-uppercase">Business Solutions</h4>
+                            <p class="text-black-50 lh-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quod alias possimus fugiat distinctio reprehenderit consequuntur!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Features Section -->
+        <!-- our work -->
+        <div class="our-work text-center pt-5 pb-5">
+            <div class="container">
+                <div class="main-title mt-5 mb-5 position-relative">
+                    <!-- position-relative to use after and make line under the p also it's going to be a component -->
+                    <img class="mb-3" src="./assets/Approved.svg" alt="your browser doesn't support this">
+                    <!-- fixing the image size with css -->
+                    <h2>Our Workshop Productivity</h2>
+                    <p class="fs-6 text-black-50 mb-5 text-uppercase">we will be more than happy to be success partners!</p>
+                    <!-- instead of making the p light like the last one make it black 50 -->
+                </div>
+                <ul class="list-unstyled d-flex justify-content-center mt-5 mb-5">
+                    <li class="active rounded-pill">All</li>
+                    <li class="rounded-pill">Design</li>
+                    <li class="rounded-pill">Code</li>
+                    <li class="rounded-pill">Photo</li>
+                    <li class="rounded-pill">App</li>
                 </ul>
-                <!-- <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form> -->
-                <!-- will add our search icon "FA" instead of the form from BS -->
-                <div class="search ps-3 pe-3 d-none d-lg-block">
-                    <!-- we have added padding 1rem from L&R
-                    we have added the css for it and the svg
-                    will get the searcg disply none and d block only with the LR-->
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <!-- i will be rendering as svg  -->
-                </div>
-                <!-- adding login button based on the BS classes -->
-                <!-- <a class="btn rounded-pill main-btn" href="#">Login</a> -->
-                <!-- remove btn class from all the button on the project -->
-                <a class=" rounded-pill main-btn " href="#">Login</a>
-            </div>
-        </div>
-    </nav>
-    <!-- end of  nav component -->
-    <!-- landing -->
-    <div class="landing d-flex justify-content-center align-items-center">
-        <div class="text-center text-light">
-            <h1>The Taste Of Creativity Is Just Right Here</h1>
-            <p class="fs-6 text-white-50 mb-5">mixing of awesome design and high performance</p>
-            <a class=" rounded-pill main-btn" href="#">Get Started</a>
-        </div>
-    </div>
-    <!-- end of landing -->
-    <!-- Features Section -->
-    <div class="features text-center pt-5 pb-5">
-        <div class="container">
-            <div class="main-title mt-5 mb-5 position-relative">
-                <!-- position-relative to use after and make line under the p also it's going to be a component -->
-                <img class="mb-3" src="./assets/Designer Life.svg" alt="your browser doesn't support this">
-                <!-- fixing the image size with css -->
-                <h2>Our Services</h2>
-                <p class="fs-6 text-black-50 mb-5 text-uppercase">it would be a pleasure to provide you with the perfect solutions</p>
-                <!-- instead of making the p light like the last one make it black 50 -->
-            </div>
-            <div class="row">
-                <!-- make it a component and repeat with modifying the svg only and title -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="feat">
-                        <div class="icon-holder position-relative">
-                            <i class="fa-solid fa-1 position-absolute bottom-0 number"></i>
-                            <i class="fa-solid fa-pencil fa-4x position-absolute bottom-0 icon"></i>
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <!-- to be component -->
+                        <div class="box mb-3 bg-white " data-work="Design">
+                            <img src="./assets/our-work/Co-working.svg" alt="your browser doesn't support this" class="img-fluid">
                         </div>
-                        <h4 class="mb-3 mt-3 text-uppercase">Graphic Design</h4>
-                        <p class="text-black-50 lh-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quod alias possimus fugiat distinctio reprehenderit consequuntur!</p>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feat">
-                        <div class="icon-holder position-relative">
-                            <i class="fa-solid fa-2 position-absolute bottom-0 number"></i>
-                            <i class="fa-solid fa-tv fa-4x position-absolute bottom-0 icon"></i>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <!-- to be component -->
+                        <div class="box mb-3 bg-white " data-work="Code">
+                            <img src="./assets/our-work/Fashion-Designer.svg" alt="your browser doesn't support this" class="img-fluid">
                         </div>
-                        <h4 class="mb-3 mt-3 text-uppercase">Creating Systems</h4>
-                        <p class="text-black-50 lh-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quod alias possimus fugiat distinctio reprehenderit consequuntur!</p>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feat">
-                        <div class="icon-holder position-relative">
-                            <i class="fa-solid fa-3 position-absolute bottom-0 number"></i>
-                            <i class="fa-solid fa-plug fa-4x position-absolute bottom-0 icon"></i>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <!-- to be component -->
+                        <div class="box mb-3 bg-white " data-work="Photo">
+                            <img src="./assets/our-work/File manager.svg" alt="your browser doesn't support this" class="img-fluid">
                         </div>
-                        <h4 class="mb-3 mt-3 text-uppercase">Business Solutions</h4>
-                        <p class="text-black-50 lh-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quod alias possimus fugiat distinctio reprehenderit consequuntur!</p>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <!-- to be component -->
+                        <div class="box mb-3 bg-white " data-work="Code">
+                            <img src="./assets/our-work/Investment data.svg" alt="your browser doesn't support this" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <!-- to be component -->
+                        <div class="box mb-3 bg-white " data-work="App">
+                            <img src="./assets/our-work/Remote meeting.svg" alt="your browser doesn't support this" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <!-- to be component -->
+                        <div class="box mb-3 bg-white " data-work="App">
+                            <img src="./assets/our-work/Respond.svg" alt="your browser doesn't support this" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <!-- to be component -->
+                        <div class="box mb-3 bg-white " data-work="Photo">
+                            <img src="./assets/our-work/Time management.svg" alt="your browser doesn't support this" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <!-- to be component -->
+                        <div class="box mb-3 bg-white " data-work="Design">
+                            <img src="./assets/our-work/Website builder.svg" alt="your browser doesn't support this" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mt-5">
+                    <a class=" rounded-pill main-btn text-uppercase" href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+        <!-- end of our work -->
+        <!-- stuff -->
+        <div class="stuff pt-5">
+            <div class="container ">
+                <div class="main-title mt-5 mb-5 position-relative text-center">
+                    <!-- position-relative to use after and make line under the p also it's going to be a component -->
+                    <img class="mb-3" src="./assets/stuff/Skydiving.svg" alt="your browser doesn't support this">
+                    <!-- fixing the image size with css -->
+                    <h2>Most Awesome Achieved Stuff</h2>
+                    <p class="fs-6 text-black-50 mb-5 text-uppercase">this is how it works!</p>
+                    <!-- instead of making the p light like the last one make it black 50 -->
+                </div>
+                <P class="description text-center mb-5 text-black-50 m-auto">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit architecto fugit aliquam, laboriosam voluptatem quos nostrum possimus modi cumque excepturi.
+                </P>
+                <div class="row align-items-center">
+                    <div class="col-lg-4 mb-4 text-center text-md-start">
+                        <div class="text">
+                            <h4>retain design</h4>
+                            <p class="text-black-50 fs-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae soluta facere nemo impedit eos! Vitae molestias consequuntur porro numquam iure earum reiciendis?</p>
+                            <p class="text-black-50 fs-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque expedita atque quos aliquid quas? Dolor, ex soluta laboriosam ea asperiores facere voluptatib</p>
+                            <a class=" rounded-pill main-btn text-uppercase" href="#">order now</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 text-center text-md-end">
+                        <div class="img">
+                            <img class="img-fluid" src="./assets/stuff/Permission per app.svg" alt="your browser doesn't support this">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End of Features Section -->
-    <!-- our work -->
-    <div class="our-work text-center pt-5 pb-5">
-        <div class="container">
-            <div class="main-title mt-5 mb-5 position-relative">
-                <!-- position-relative to use after and make line under the p also it's going to be a component -->
-                <img class="mb-3" src="./assets/Approved.svg" alt="your browser doesn't support this">
-                <!-- fixing the image size with css -->
-                <h2>Our Workshop Productivity</h2>
-                <p class="fs-6 text-black-50 mb-5 text-uppercase">we will be more than happy to be success partners!</p>
-                <!-- instead of making the p light like the last one make it black 50 -->
-            </div>
-            <ul class="list-unstyled d-flex justify-content-center mt-5 mb-5">
-                <li class="active rounded-pill">All</li>
-                <li class="rounded-pill">Design</li>
-                <li class="rounded-pill">Code</li>
-                <li class="rounded-pill">Photo</li>
-                <li class="rounded-pill">App</li>
-            </ul>
-            <div class="row">
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <!-- to be component -->
-                    <div class="box mb-3 bg-white " data-work="Design">
-                        <img src="./assets/our-work/Co-working.svg" alt="your browser doesn't support this" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <!-- to be component -->
-                    <div class="box mb-3 bg-white " data-work="Code">
-                        <img src="./assets/our-work/Fashion-Designer.svg" alt="your browser doesn't support this" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <!-- to be component -->
-                    <div class="box mb-3 bg-white " data-work="Photo">
-                        <img src="./assets/our-work/File manager.svg" alt="your browser doesn't support this" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <!-- to be component -->
-                    <div class="box mb-3 bg-white " data-work="Code">
-                        <img src="./assets/our-work/Investment data.svg" alt="your browser doesn't support this" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <!-- to be component -->
-                    <div class="box mb-3 bg-white " data-work="App">
-                        <img src="./assets/our-work/Remote meeting.svg" alt="your browser doesn't support this" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <!-- to be component -->
-                    <div class="box mb-3 bg-white " data-work="App">
-                        <img src="./assets/our-work/Respond.svg" alt="your browser doesn't support this" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <!-- to be component -->
-                    <div class="box mb-3 bg-white " data-work="Photo">
-                        <img src="./assets/our-work/Time management.svg" alt="your browser doesn't support this" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <!-- to be component -->
-                    <div class="box mb-3 bg-white " data-work="Design">
-                        <img src="./assets/our-work/Website builder.svg" alt="your browser doesn't support this" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center mt-5">
-                <a class=" rounded-pill main-btn text-uppercase" href="#">Learn more</a>
-            </div>
-        </div>
-    </div>
-    <!-- end of our work -->
-    <!-- stuff -->
-    <div class="stuff pt-5">
-        <div class="container ">
-            <div class="main-title mt-5 mb-5 position-relative text-center">
-                <!-- position-relative to use after and make line under the p also it's going to be a component -->
-                <img class="mb-3" src="./assets/stuff/Skydiving.svg" alt="your browser doesn't support this">
-                <!-- fixing the image size with css -->
-                <h2>Most Awesome Achieved Stuff</h2>
-                <p class="fs-6 text-black-50 mb-5 text-uppercase">this is how it works!</p>
-                <!-- instead of making the p light like the last one make it black 50 -->
-            </div>
-            <P class="description text-center mb-5 text-black-50 m-auto">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat odit architecto fugit aliquam, laboriosam voluptatem quos nostrum possimus modi cumque excepturi.
-            </P>
-            <div class="row align-items-center">
-                <div class="col-lg-4 mb-4 text-center text-md-start">
-                    <div class="text">
-                        <h4>retain design</h4>
-                        <p class="text-black-50 fs-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae soluta facere nemo impedit eos! Vitae molestias consequuntur porro numquam iure earum reiciendis?</p>
-                        <p class="text-black-50 fs-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque expedita atque quos aliquid quas? Dolor, ex soluta laboriosam ea asperiores facere voluptatib</p>
-                        <a class=" rounded-pill main-btn text-uppercase" href="#">order now</a>
-                    </div>
-                </div>
-                <div class="col-lg-8 text-center text-md-end">
-                    <div class="img">
-                        <img class="img-fluid" src="./assets/stuff/Permission per app.svg" alt="your browser doesn't support this">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end of stuff -->
-    <!-- our team -->
-    <div class="our-team text-center pb-5 pt-5">
-        <div class="container pb-5 pt-5 ">
-            <h2 class="fw-bold">Met Our Team</h2>
-            <p class="text-black-50 mb-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In iusto dolore numquam nemo perferendis amet, ab neque nam voluptatem inventore?</p>
-            <div class="row">
-                <div class="col-md-6 col-lg-3">
-                    <div class="box bg-white">
-                        <img class="img-fluid" src="./assets/staff/tm1.jpg" alt="your browser doesn't support this">
-                        <h4 class="p-3 text-light">Ahmed abdulrahman</h4>
-                        <blockquote class="text-black-50 p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non voluptates provident nulla assumenda ab sint!</blockquote>
+        <!-- end of stuff -->
+        <!-- our team -->
+        <div class="our-team text-center pb-5 pt-5">
+            <div class="container pb-5 pt-5 ">
+                <h2 class="fw-bold">Met Our Team</h2>
+                <p class="text-black-50 mb-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In iusto dolore numquam nemo perferendis amet, ab neque nam voluptatem inventore?</p>
+                <div class="row">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="box bg-white">
+                            <img class="img-fluid" src="./assets/staff/tm1.jpg" alt="your browser doesn't support this">
+                            <h4 class="p-3 text-light">Ahmed abdulrahman</h4>
+                            <blockquote class="text-black-50 p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non voluptates provident nulla assumenda ab sint!</blockquote>
 
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="box bg-white">
-                        <img class="img-fluid" src="./assets/staff/tm2.jpg" alt="your browser doesn't support this">
-                        <h4 class="p-3 text-light">sereen Ahmed</h4>
-                        <blockquote class="text-black-50 p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non voluptates provident nulla assumenda ab sint!</blockquote>
-
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="box bg-white">
-                        <img class="img-fluid" src="./assets/staff/tm3.jpg" alt="your browser doesn't support this">
-                        <h4 class="p-3 text-light">sara mohamed</h4>
-                        <blockquote class="text-black-50 p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non voluptates provident nulla assumenda ab sint!</blockquote>
-
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="box bg-white">
-                        <img class="img-fluid" src="./assets/staff/tm4.jpg" alt="your browser doesn't support this">
-                        <h4 class="p-3 text-light">noah mahmoud</h4>
-                        <blockquote class="text-black-50 p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non voluptates provident nulla assumenda ab sint!</blockquote>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end of our team -->
-    <!-- tech -->
-    <div class="techs pt-5 pb-5 text-center">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
-                    <img class="img-fluid" src="./assets/tech/Boss giving instructions to employee.svg" alt="your browser doesn't support this">
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
-                    <img class="img-fluid" src="./assets/tech/Competition.svg" alt="your browser doesn't support this">
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
-                    <img class="img-fluid" src="./assets/tech/Light bulb.svg " alt="your browser doesn't support this">
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3 ">
-                    <img class="img-fluid " src="./assets/tech/My answer.svg " alt="your browser doesn't support this">
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3 ">
-                    <img class="img-fluid " src="./assets/tech/My Password.svg " alt="your browser doesn't support this">
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3 ">
-                    <img class="img-fluid " src="./assets/tech/Server technician adjusting wiring.svg " alt="your browser doesn't support this">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end of tech -->
-    <!-- project -->
-    <div class="project pt-5 pb-5 text-center text-light">
-        <h2>start your project</h2>
-        <p class="text-white-50">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In impedit fugiat debitis aperiam, quia est at iste eligendi corrupti.</p>
-        <div class="d-flex justify-content-center mt-5 mb-5">
-            <a class=" rounded-pill main-btn text-uppercase" href="#">start your project</a>
-        </div>
-    </div>
-    <!-- end of project -->
-    <!-- blog -->
-    <div class="blog pt-2 pb-5 text-center">
-        <div class="container">
-            <div class="main-title text-center mb-5 position-relative">
-                <!-- position-relative to use after and make line under the p also it's going to be a component -->
-                <img class="mb-3" src="./assets/blog/Successful purchase.svg" alt="your browser doesn't support this">
-                <!-- fixing the image size with css -->
-                <h2>Read Our Blog</h2>
-                <p class="text-black-50 mb-5 text-uppercase">new stories</p>
-                <!-- instead of making the p light like the last one make it black 50 -->
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
-                        <img src="./assets/blog/Medieval.svg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <span class="text-black-50">Aug 27, 2022</span>
-                            <h5 class="card-title">some awesome blog title here</h5>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
-                        <img src="./assets/blog/Team Spirit.svg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <span class="text-black-50">Mar 9, 2022</span>
-                            <h5 class="card-title">the power of teamwork</h5>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="box bg-white">
+                            <img class="img-fluid" src="./assets/staff/tm2.jpg" alt="your browser doesn't support this">
+                            <h4 class="p-3 text-light">sereen Ahmed</h4>
+                            <blockquote class="text-black-50 p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non voluptates provident nulla assumenda ab sint!</blockquote>
+
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
-                        <img src="./assets/blog/Through the desert.svg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <span class="text-black-50">Jan 18, 2022</span>
-                            <h5 class="card-title">great work ever!</h5>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="box bg-white">
+                            <img class="img-fluid" src="./assets/staff/tm3.jpg" alt="your browser doesn't support this">
+                            <h4 class="p-3 text-light">sara mohamed</h4>
+                            <blockquote class="text-black-50 p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non voluptates provident nulla assumenda ab sint!</blockquote>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="box bg-white">
+                            <img class="img-fluid" src="./assets/staff/tm4.jpg" alt="your browser doesn't support this">
+                            <h4 class="p-3 text-light">noah mahmoud</h4>
+                            <blockquote class="text-black-50 p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non voluptates provident nulla assumenda ab sint!</blockquote>
+
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- end of our team -->
+        <!-- tech -->
+        <div class="techs pt-5 pb-5 text-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
+                        <img class="img-fluid" src="./assets/tech/Boss giving instructions to employee.svg" alt="your browser doesn't support this">
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
+                        <img class="img-fluid" src="./assets/tech/Competition.svg" alt="your browser doesn't support this">
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3">
+                        <img class="img-fluid" src="./assets/tech/Light bulb.svg " alt="your browser doesn't support this">
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3 ">
+                        <img class="img-fluid " src="./assets/tech/My answer.svg " alt="your browser doesn't support this">
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3 ">
+                        <img class="img-fluid " src="./assets/tech/My Password.svg " alt="your browser doesn't support this">
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-2 mt-3 mb-3 ">
+                        <img class="img-fluid " src="./assets/tech/Server technician adjusting wiring.svg " alt="your browser doesn't support this">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of tech -->
+        <!-- project -->
+        <div class="project pt-5 pb-5 text-center text-light">
+            <h2>start your project</h2>
+            <p class="text-white-50">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In impedit fugiat debitis aperiam, quia est at iste eligendi corrupti.</p>
             <div class="d-flex justify-content-center mt-5 mb-5">
-                <a class=" rounded-pill main-btn text-uppercase" href="#">more stories</a>
+                <a class=" rounded-pill main-btn text-uppercase" href="#">start your project</a>
             </div>
         </div>
-    </div>
-    <!-- end of blog -->
-    <!-- subscribe -->
-    <div class="subscribe pt-5 pb-5 text-center text-md-start">
-        <div class="container">
-            <form class="row align-items-center">
-                <div class="col-md-6 col-lg-3">
-                    <div class="fw-bold fs-5 mb-3">subscribe to our newsletter</div>
+        <!-- end of project -->
+        <!-- blog -->
+        <div class="blog pt-2 pb-5 text-center">
+            <div class="container">
+                <div class="main-title text-center mb-5 position-relative">
+                    <!-- position-relative to use after and make line under the p also it's going to be a component -->
+                    <img class="mb-3" src="./assets/blog/Successful purchase.svg" alt="your browser doesn't support this">
+                    <!-- fixing the image size with css -->
+                    <h2>Read Our Blog</h2>
+                    <p class="text-black-50 mb-5 text-uppercase">new stories</p>
+                    <!-- instead of making the p light like the last one make it black 50 -->
                 </div>
-                <div class="col-md-6 col-lg-7 mb-md-5">
-                    <input class="w-100 text-light p-2 bg-transparent" type="text" placeholder="Please Enter Your Email Address">
-                </div>
-                <div class="col-md-6 col-lg-2 pt-4 pt-md-0">
-                    <input class=" rounded-pill" type="submit" value="subscribe">
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- end of subscribe -->
-    <!-- footer -->
-    <div class="footer pt-5 pb-5 text-white-50 text-center text-md-start">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-4">
-                    <div class="info mb-5">
-                        <img src="./assets/text-1660258868224.png" alt="" class="mb-4">
-                        <p class="mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, exercitationem? Recusandae quaerat quos iure nesciunt.</p>
-                        <div class="copyright">
-                            created by <span>mekho tech</span>
-                            <div>&copy; 2022 - <span>Manakhly</span></div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="./assets/blog/Medieval.svg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <span class="text-black-50">Aug 27, 2022</span>
+                                <h5 class="card-title">some awesome blog title here</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="./assets/blog/Team Spirit.svg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <span class="text-black-50">Mar 9, 2022</span>
+                                <h5 class="card-title">the power of teamwork</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="./assets/blog/Through the desert.svg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <span class="text-black-50">Jan 18, 2022</span>
+                                <h5 class="card-title">great work ever!</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-2">
-                    <div class="links">
-                        <h5 class="text-light">Links</h5>
-                        <ul class="list-unstyled lh-lg">
-                            <li>Home</li>
-                            <li>Our Service</li>
-                            <li>Portfolio</li>
-                            <li>Testimonials</li>
-                            <li>Support</li>
-                            <li>Terms And Conditions</li>
-                        </ul>
-                    </div>
+                <div class="d-flex justify-content-center mt-5 mb-5">
+                    <a class=" rounded-pill main-btn text-uppercase" href="#">more stories</a>
                 </div>
-                <div class="col-md-6 col-lg-2">
-                    <div class="links">
-                        <h5 class="text-light">Links</h5>
-                        <ul class="list-unstyled lh-lg">
-                            <li>Home</li>
-                            <li>Our Service</li>
-                            <li>Portfolio</li>
-                            <li>Testimonials</li>
-                            <li>Support</li>
-                            <li>Terms And Conditions</li>
-                        </ul>
+            </div>
+        </div>
+        <!-- end of blog -->
+        <!-- subscribe -->
+        <div class="subscribe pt-5 pb-5 text-center text-md-start">
+            <div class="container">
+                <form class="row align-items-center">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="fw-bold fs-5 mb-3">subscribe to our newsletter</div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="contact">
-                        <h5 class="text-light">Contact Us</h5>
-                        <p class="lh-lg mt-3 mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, atque tenetur?</p>
-                        <a href="#" class="btn rounded-pill main-btn w-100">mekho@gmail.com</a>
-                        <ul class="d-flex mt-5 list-unstyled gap-5">
-                            <li>
-                                <a class="d-block text-light">
-                                    <i class="fa-brands fa-facebook fa-lg facebook rounded-circle p-2"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="d-block text-light">
-                                    <i class="fa-brands fa-twitter fa-lg twitter rounded-circle p-2"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="d-block text-light">
-                                    <i class="fa-brands fa-linkedin fa-lg linkedin rounded-circle p-2"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="d-block text-light">
-                                    <i class="fa-brands fa-youtube fa-lg youtube rounded-circle p-2"></i>
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="col-md-6 col-lg-7 mb-md-5">
+                        <input class="w-100 text-light p-2 bg-transparent" type="text" placeholder="Please Enter Your Email Address">
+                    </div>
+                    <div class="col-md-6 col-lg-2 pt-4 pt-md-0">
+                        <input class=" rounded-pill" type="submit" value="subscribe">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- end of subscribe -->
+        <!-- footer -->
+        <div class="footer pt-5 pb-5 text-white-50 text-center text-md-start">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="info mb-5">
+                            <img src="./assets/text-1660258868224.png" alt="" class="mb-4">
+                            <p class="mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, exercitationem? Recusandae quaerat quos iure nesciunt.</p>
+                            <div class="copyright">
+                                created by <span>mekho tech</span>
+                                <div>&copy; 2022 - <span>Manakhly</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2">
+                        <div class="links">
+                            <h5 class="text-light">Links</h5>
+                            <ul class="list-unstyled lh-lg">
+                                <li>Home</li>
+                                <li>Our Service</li>
+                                <li>Portfolio</li>
+                                <li>Testimonials</li>
+                                <li>Support</li>
+                                <li>Terms And Conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2">
+                        <div class="links">
+                            <h5 class="text-light">Links</h5>
+                            <ul class="list-unstyled lh-lg">
+                                <li>Home</li>
+                                <li>Our Service</li>
+                                <li>Portfolio</li>
+                                <li>Testimonials</li>
+                                <li>Support</li>
+                                <li>Terms And Conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="contact">
+                            <h5 class="text-light">Contact Us</h5>
+                            <p class="lh-lg mt-3 mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, atque tenetur?</p>
+                            <a href="#" class="btn rounded-pill main-btn w-100">mekho@gmail.com</a>
+                            <ul class="d-flex mt-5 list-unstyled gap-5">
+                                <li>
+                                    <a class="d-block text-light">
+                                        <i class="fa-brands fa-facebook fa-lg facebook rounded-circle p-2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="d-block text-light">
+                                        <i class="fa-brands fa-twitter fa-lg twitter rounded-circle p-2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="d-block text-light">
+                                        <i class="fa-brands fa-linkedin fa-lg linkedin rounded-circle p-2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="d-block text-light">
+                                        <i class="fa-brands fa-youtube fa-lg youtube rounded-circle p-2"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- end of footer -->
-    <!-- removing the body height that was for the test -->
+        <!-- end of footer -->
+        <!-- removing the body height that was for the test -->
 
 
+        <!-- -------------------------------------------------------------------------------------------------------------------- -->
+        <!-- bootstrap js node_modules -->
+        <!-- <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js "></script> -->
+
+        <!--  bootstrap js  CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.bundle.min.js"
+        integrity="sha512-9GacT4119eY3AcosfWtHMsT5JyZudrexyEVzTBWV3viP/YfB9e2pEy3N7WXL3SV6ASXpTU0vzzSxsbfsuUH4sQ==" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
 
 
-    <!-- -------------------------------------------------------------------------------------------------------------------- -->
-    <!-- bootstrap js from dist from module from npm -->
-    <!-- <script src=" ./node_modules/bootstrap/dist/js/bootstrap.bundle.js "></script> -->
-    <!-- <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js "></script> -->
-    <!-- UPDATE -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <!--  for font awesome JS to rendering as svg // from dist from module from npm -->
-    <!-- <script src="./node_modules/@fortawesome/fontawesome-free/js/all.min.js "></script> -->
-    <!-- update -->
-    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
-    <!-- my script -->
-    <script src="./index.js"></script>
-</body>
+        <!--  for font awesome JS to rendering as svg // node_modules  -->
+        <!-- <script src="./node_modules/@fortawesome/fontawesome-free/js/all.min.js "></script> -->
 
+        <!-- FONT awesome JS  CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js"
+        integrity="sha512-8pHNiqTlsrRjVD4A/3va++W1sMbUHwWxxRPWNyVlql3T+Hgfd81Qc6FC5WMXDC+tSauxxzp1tgiAvSKFu1qIlA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <!-- my script -->
+        <script src="./index.js"></script>
+    </body>
 </html>
